@@ -43,54 +43,101 @@ public class Main {
 			System.out.println("% Rest Bestimmung");
 			//lese operanden ein
 			System.out.print("Operation: ");
-			char operator =derScanner.next().charAt(0);
-			System.out.print("Eingabe zahl1: ");
-			double eingabe1 = derScanner.nextDouble();
-			System.out.print("Eingabe zahl2: ");
-			double eingabe2 = derScanner.nextDouble();
+			String operator =derScanner.next();
 			
-			//Rufe entsprechende Methode auf
-			
-			System.out.print("Ergebniss: ");
 			switch (operator) {
-			
-			case '+': 
-						System.out.println(derRechner.addieren(eingabe1, eingabe2));
-						System.out.println();
-				break;
-				
-			case '-':
-						System.out.println(derRechner.subtrahieren(eingabe1, eingabe2));
-						System.out.println();
-				break;
+			case "+":
+			case "-":
+			case "*":
+			case "/":
+			case "^":
+					System.out.print("Eingabe zahl1: ");
+					double eingabe1 = derScanner.nextDouble();
+					System.out.print("Eingabe zahl2: ");
+					double eingabe2 = derScanner.nextDouble();
 					
-			case '*':
-						System.out.println(derRechner.multiplizieren(eingabe1, eingabe2));
+					//Rufe entsprechende Methode auf
+					
+					System.out.print("Ergebniss: ");
+					switch (operator) {
+					
+					case "+": 
+								System.out.println(derRechner.addieren(eingabe1, eingabe2));
+								System.out.println();
+						break;
+						
+					case "-":
+								System.out.println(derRechner.subtrahieren(eingabe1, eingabe2));
+								System.out.println();
+						break;
+							
+					case "*":
+								System.out.println(derRechner.multiplizieren(eingabe1, eingabe2));
+								System.out.println();
+						break;
+						
+					case "/":
+								System.out.println(derRechner.dividieren(eingabe1, eingabe2));
+								System.out.println();
+						break;
+						
+					case "%":
+								System.out.println(derRechner.modulo(eingabe1, eingabe2));
+								System.out.println();
+						break;
+					
+					case "^":
+						System.out.println(derRechner.hoch(eingabe1, eingabe2));
 						System.out.println();
-				break;
+						break;	
+						
+					default: 
+								System.out.println("fehlerhafte eingabe");
+								System.out.println();
+						break;
+					
+					}break;
+					
+			case "!"://fakultät
+			case "*2":
+				System.out.print("Eingabe zahl1: ");
 				
-			case '/':
-						System.out.println(derRechner.dividieren(eingabe1, eingabe2));
-						System.out.println();
-				break;
-				
-			case '%':
-						System.out.println(+derRechner.modulo(eingabe1, eingabe2));
-						System.out.println();
-				break;
-				
-			default: 
-						System.out.println("fehlerhafte eingabe");
-						System.out.println();
-				break;
-			}
+				double eingabe3 = derScanner.nextDouble();
+				System.out.print("Ergebniss: ");
+					switch (operator) {
+					
+					case "!": 
+							System.out.println(derRechner.fakultaet(eingabe3));
+							System.out.println(); break;
+							
+					case "*2": 
+							System.out.println(derRechner.mal2(eingabe3));
+							System.out.println();break;
+					}
+							
+					
+			}	
+					
+					
 			
+					
+					
 			
+				System.out.println("Möchtest du nochmal rechnen?");
+				System.out.println("   (beliebige taste für weiter)=ja     (n)=nein");
+				if(derScanner.next().toLowerCase().charAt(0) == 'n') {
+					System.out.println("Das programm wurde beendet");break;
+				}else 
+					System.out.println();
 			
+				 		
+			
+		
+		}	
 			
 		}
 		
 		
 		
 	}
-}
+
