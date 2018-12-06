@@ -21,8 +21,8 @@ public class Steuerung {
 	//geben sie mit de roberfläche die namen der Spieler aus
 		System.out.println(spieler[0].getName());
 		System.out.println(spieler[1].getName());
-	
-	
+		dieOberflaeche.gebeText(spieler[0].getName(),true);
+		dieOberflaeche.gebeText(spieler[1].getName(),false);
 	
 	}
 	
